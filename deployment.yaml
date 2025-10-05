@@ -13,11 +13,16 @@ spec:
     metadata:
       labels:
         app: my-app
-      spec:
-        containers:
-          - name:  my-name
-            image: nginx:latest
-            ports:
+    spec:
+      containers:
+        - name: my-name
+          image: nginx:latest
+          ports:
             - containerPort: 80
-    
-
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
